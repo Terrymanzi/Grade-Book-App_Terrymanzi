@@ -39,7 +39,11 @@ def main():
         elif choice == '3':
             email = input("Enter student email: ")
             course_name = input("Enter course name: ")
-            grade = float(input("Enter grade (0-4 scale, optional): "))
+            grade_input = input("Enter grade (0-4 scale, optional): ")
+
+            # Check if grade input is empty, if not, convert to float
+            grade = float(grade_input) if grade_input else None
+
             gradebook.register_student_for_course(email, course_name, grade)
             print("Student registered for course successfully.")
 
